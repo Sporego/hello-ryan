@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ChakraProvider,
   theme,
@@ -6,10 +6,15 @@ import {
 
 import Navbar from "./components/Navbar"
 
+import { ThemeContext } from "./contexts/ThemeContext"
+
 function App() {
+  const [lightMode,setLightMode] = useState("light")
   return (
     <ChakraProvider theme={theme}>
+    <ThemeContext.Provider value={{lightMode,setLightMode}}>
       <Navbar/>
+    </ThemeContext.Provider>
     </ChakraProvider>
   );
 }
