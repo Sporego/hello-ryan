@@ -4,7 +4,9 @@
   "description": "Demo deploy for Ryan",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "build": "cd ./client && npm i && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
