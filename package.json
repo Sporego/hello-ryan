@@ -1,0 +1,28 @@
+{
+  "name": "hello-ryan",
+  "version": "1.0.0",
+  "description": "Demo deploy for Ryan",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sporego/hello-ryan.git"
+  },
+  "keywords": [
+    "react",
+    "context",
+    "api",
+    "mongodb"
+  ],
+  "author": "Filbert Shi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sporego/hello-ryan/issues"
+  },
+  "homepage": "https://github.com/Sporego/hello-ryan#readme",
+  "devDependencies": {
+    "prettier": "2.3.0"
+  }
+}
