@@ -24,9 +24,10 @@ function Navbar() {
           onClick={() => {
             setLightMode(lightMode === 'light' ? 'dark' : 'light');
           }}
-          _hover={lightMode === 'light' ?
-          {     background: "gray.200"} :
-          {     background: "gray.600",}
+          _hover={
+            lightMode === 'light'
+              ? { background: 'gray.200' }
+              : { background: 'gray.600' }
           }
         >
           {lightMode === 'light' ? 'Light' : 'Dark'}
