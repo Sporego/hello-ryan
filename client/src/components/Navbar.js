@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Button, Flex, Heading, LinkBox, Link } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Link } from '@chakra-ui/react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 import { FaMoon, FaSun, FaGithub } from 'react-icons/fa';
@@ -20,7 +20,7 @@ function Navbar() {
           Hello Ryan
         </Heading>
         <Button
-          rightIcon={lightMode === 'light' ? <FaSun /> : <FaSun />}
+          rightIcon={lightMode === 'light' ? <FaSun /> : <FaMoon />}
           variant="outline"
           onClick={() => {
             setLightMode(lightMode === 'light' ? 'dark' : 'light');
@@ -43,6 +43,7 @@ function Navbar() {
     >
       <Flex direction="row" align="center" justify="space-around">
         <Button
+        border="0"
         as={Link}
         href="https://github.com/Sporego/hello-ryan"
           rightIcon={<FaGithub/>}
