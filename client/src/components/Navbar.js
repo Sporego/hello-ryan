@@ -10,10 +10,11 @@ function Navbar() {
   return (
     <Box
       w="100%"
+      py="4"
       color={lightMode === 'light' ? 'black' : 'white'}
       bg={lightMode === 'light' ? 'white' : 'gray.800'}
     >
-      <Flex direction="row">
+      <Flex direction="row" align="center" justify="space-evenly">
         <Heading as="h1" size="2xl">
           Hello Ryan
         </Heading>
@@ -23,6 +24,10 @@ function Navbar() {
           onClick={() => {
             setLightMode(lightMode === 'light' ? 'dark' : 'light');
           }}
+          _hover={lightMode === 'light' ?
+          {     background: "gray.200"} :
+          {     background: "gray.600",}
+          }
         >
           {lightMode === 'light' ? 'Light' : 'Dark'}
         </Button>
