@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Sporego/hello-ryan#readme",
   "devDependencies": {
     "prettier": "2.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
