@@ -7,10 +7,7 @@ import {} from 'react-icons/fa';
 function DatabaseInterface() {
   const { lightMode, setLightMode } = useContext(ThemeContext);
 
-  return (
-    <>
-    </>
-  );
+  return <></>;
 }
 
 export default DatabaseInterface;
