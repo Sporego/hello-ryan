@@ -1,3 +1,13 @@
+
+import dotenv from 'dotenv'
+const result = dotenv.config()
+
+if (result.error) {
+  throw result.error
+}
+
+console.log(result.parsed)
+
 import express from "express";
 import path from "path";
 import mongoose from "mongoose";
@@ -17,5 +27,5 @@ app.get("/", (req, res) => {
 });
 
 mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => app.listen(PORT, () => console.log(`Server listening on port: ${PORT}!`)))
+  .then(() => app.listen(PORT, () => console.log(`Mongoose to MongoDB -> Success -> Server listening on port: ${PORT}!`)))
   .catch((error) => console.log(`${error} did not connect`));
