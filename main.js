@@ -16,6 +16,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server listening on port: ${PORT}!`)))
   .catch((error) => console.log(`${error} did not connect`));
