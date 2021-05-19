@@ -1,13 +1,3 @@
-
-import dotenv from 'dotenv'
-const result = dotenv.config()
-
-if (result.error) {
-  throw result.error
-}
-
-console.log(result.parsed)
-
 import express from "express";
 import path from "path";
 import mongoose from "mongoose";
