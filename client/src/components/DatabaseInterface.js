@@ -151,8 +151,6 @@ function DatabaseInterface() {
                   alert("payload : "+JSON.stringify(values, null, 2));
                   try {
                     const response = await axios.get('api/applicants', values);
-                    alert("Success: Check Console")
-                    console.log(response)
                     setApplicantsArray(response)
                     actions.setSubmitting(false);
                   } catch (error) {
@@ -185,6 +183,7 @@ function DatabaseInterface() {
                       colorScheme="green"
                       isLoading={values.isSubmitting}
                       type="submit"
+                      isDisabled="true"
                     >
                       Find (via aggregate)
                     </Button>
