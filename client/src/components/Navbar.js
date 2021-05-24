@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Box, Button, Flex, Heading, Link } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Heading, Link } from '@chakra-ui/react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
 import { FaMoon, FaSun, FaGithub } from 'react-icons/fa';
@@ -15,7 +15,8 @@ function Navbar() {
         color={lightMode === 'light' ? 'black' : 'white'}
         bg={lightMode === 'light' ? 'white' : 'gray.800'}
       >
-        <Flex direction="row" align="center" justify="space-evenly">
+      <Center>
+        <Flex direction="row" align="center" justify="space-between" w={{base:"95%",md: "80%"}}>
           <Heading as="h1" size="2xl">
             Hello Ryan
           </Heading>
@@ -34,6 +35,7 @@ function Navbar() {
             {lightMode === 'light' ? 'Light' : 'Dark'}
           </Button>
         </Flex>
+        </Center>
       </Box>
       <Box
         w="100%"
@@ -41,7 +43,8 @@ function Navbar() {
         color={lightMode === 'light' ? 'black' : 'white'}
         bg={lightMode === 'light' ? 'white' : 'gray.800'}
       >
-        <Flex direction="row" align="center" justify="space-around">
+      <Center>
+        <Flex direction="row" align="center" justify="space-between" w={{base:"95%",md: "80%"}}>
           <Button
             border="0"
             as={Link}
@@ -57,6 +60,7 @@ function Navbar() {
             Github Repo
           </Button>
         </Flex>
+        </Center>
       </Box>
     </>
   );
