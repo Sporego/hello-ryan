@@ -190,7 +190,9 @@ function DatabaseInterface() {
                   </Form>
                 )}
               </Formik>
-
+              <Heading size="md">API routes to try with tools like Postman</Heading>
+              <Heading size="sm">(GET) https://hello-ryan.herokuapp.com/api/applicant</Heading>
+              <Heading size="sm">(POST) https://hello-ryan.herokuapp.com/api/applicant</Heading>
             </VStack>
           </Flex>
         </Center>
