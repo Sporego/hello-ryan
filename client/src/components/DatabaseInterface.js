@@ -183,7 +183,7 @@ function DatabaseInterface() {
                       isLoading={values.isSubmitting}
                       type="submit"
                     >
-                      Find
+                      Find (via aggregate)
                     </Button>
                   </Form>
                 )}
