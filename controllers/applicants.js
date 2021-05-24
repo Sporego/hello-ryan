@@ -13,7 +13,7 @@ export const postApplicant = async (req,res) => {
     try {
         await newApplicant.save()
 
-        res.status(201).json(newApplicant)
+        res.status(201).json(newApplicant._id)
     } catch (e) {
         res.status(409).json({message: e.message})
     }

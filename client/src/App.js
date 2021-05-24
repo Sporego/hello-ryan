@@ -12,7 +12,7 @@ function App() {
     <ChakraProvider>
       <ThemeContext.Provider value={{ lightMode, setLightMode }}>
         <Navbar />
-        <DatabaseInterface/>
+        <DatabaseInterface />
       </ThemeContext.Provider>
     </ChakraProvider>
   );

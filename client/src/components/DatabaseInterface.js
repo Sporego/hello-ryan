@@ -55,21 +55,17 @@ function DatabaseInterface() {
               <Heading>Applicant Tracking Interface</Heading>
               <Formik
                 initialValues={{}}
-                onSubmit={ async (values, actions) => {
-
-                    values.skills = values.skills.split(",")
-                    alert(JSON.stringify(values, null, 2));
-                    try {
-                      const response = await axios.post('api/applicants', values)
-                      alert('Success! Applicant ID: '+response.id)
-                      actions.setSubmitting(false);
-                    } catch (error) {
-                      actions.setSubmitting(false);
-                      alert(error);
-                    }
-
-
-
+                onSubmit={async (values, actions) => {
+                  values.skills = values.skills.split(',');
+                  alert(JSON.stringify(values, null, 2));
+                  try {
+                    const response = await axios.post('api/applicants', values);
+                    alert('Success! Applicant ID: ' + response);
+                    actions.setSubmitting(false);
+                  } catch (error) {
+                    actions.setSubmitting(false);
+                    alert(error);
+                  }
                 }}
               >
                 {({ values }) => (
@@ -117,24 +113,22 @@ function DatabaseInterface() {
                       </Field>
                     </HStack>
                     <Field name="skills">
-                        {({ field, form }) => (
-                          <FormControl
-                            isInvalid={
-                              form.errors.skills && form.touched.skills
-                            }
-                          >
-                            <FormLabel htmlFor="skills">Skills</FormLabel>
-                            <Input
-                              {...field}
-                              id="skills"
-                              placeholder="git,react,node"
-                            />
-                            <FormErrorMessage>
-                              {form.errors.skills}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
+                      {({ field, form }) => (
+                        <FormControl
+                          isInvalid={form.errors.skills && form.touched.skills}
+                        >
+                          <FormLabel htmlFor="skills">Skills</FormLabel>
+                          <Input
+                            {...field}
+                            id="skills"
+                            placeholder="git,react,node"
+                          />
+                          <FormErrorMessage>
+                            {form.errors.skills}
+                          </FormErrorMessage>
+                        </FormControl>
+                      )}
+                    </Field>
                     <Button
                       mt={4}
                       colorScheme="green"
