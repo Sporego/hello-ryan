@@ -2,7 +2,14 @@ import React, { useContext } from 'react';
 import { Box, Button, Center, Flex, Heading, Link } from '@chakra-ui/react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
-import { FaMoon, FaSun, FaGithub, FaGithubAlt } from 'react-icons/fa';
+import {
+  FaMoon,
+  FaSun,
+  FaGithub,
+  FaGithubAlt,
+  FaDev,
+  FaBlog,
+} from 'react-icons/fa';
 
 function Navbar() {
   const { lightMode, setLightMode } = useContext(ThemeContext);
@@ -60,7 +67,7 @@ function Navbar() {
                 border="0"
                 as={Link}
                 href="https://github.com/Sporego/hello-ryan"
-                rightIcon={<FaGithub />}
+                leftIcon={<FaGithub />}
                 variant="outline"
                 _hover={
                   lightMode === 'light'
@@ -74,7 +81,7 @@ function Navbar() {
                 border="0"
                 as={Link}
                 href="https://github.com/Sporego/"
-                rightIcon={<FaGithubAlt />}
+                leftIcon={<FaGithubAlt />}
                 variant="outline"
                 _hover={
                   lightMode === 'light'
@@ -83,6 +90,38 @@ function Navbar() {
                 }
               >
                 Github Profile
+              </Button>
+            </div>
+            <div>
+              <Button
+                fontSize="xl"
+                border="0"
+                as={Link}
+                href="https://filbert.io/"
+                rightIcon={<FaDev />}
+                variant="outline"
+                _hover={
+                  lightMode === 'light'
+                    ? { background: 'gray.200' }
+                    : { background: 'gray.600' }
+                }
+              >
+                My Website
+              </Button>
+              <Button
+                fontSize="xl"
+                border="0"
+                as={Link}
+                href="https://filbert.io/blog"
+                rightIcon={<FaBlog />}
+                variant="outline"
+                _hover={
+                  lightMode === 'light'
+                    ? { background: 'gray.200' }
+                    : { background: 'gray.600' }
+                }
+              >
+                My Blog
               </Button>
             </div>
           </Flex>
