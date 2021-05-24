@@ -1,7 +1,7 @@
 import express, { response } from 'express';
 import mongoose from 'mongoose';
 
-import Applicant from '../models/applicant';
+import Applicant from '../models/applicant.js';
 
 const router = express.Router();
 
