@@ -148,8 +148,9 @@ function DatabaseInterface() {
                   values.skills = values.skills.split(',');
                   alert("payload : "+JSON.stringify(values, null, 2));
                   try {
-                    const response = await axios.post('api/applicants', values);
-                    alert('Success! Applicant ID: ' + response);
+                    const response = await axios.get('api/applicants', values);
+                    alert(response);
+                    alert(response.body);
                     actions.setSubmitting(false);
                   } catch (error) {
                     actions.setSubmitting(false);
@@ -159,48 +160,6 @@ function DatabaseInterface() {
               >
                 {({ values }) => (
                   <Form>
-                    <HStack>
-                      <Field name="firstName" validate={validateFirstName}>
-                        {({ field, form }) => (
-                          <FormControl
-                            isInvalid={
-                              form.errors.firstName && form.touched.firstName
-                            }
-                          >
-                            <FormLabel htmlFor="firstName">
-                              First name
-                            </FormLabel>
-                            <Input
-                              {...field}
-                              id="firstName"
-                              placeholder="First name"
-                            />
-                            <FormErrorMessage>
-                              {form.errors.firstName}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
-                      <Field name="lastName" validate={validateLastName}>
-                        {({ field, form }) => (
-                          <FormControl
-                            isInvalid={
-                              form.errors.lastName && form.touched.lastName
-                            }
-                          >
-                            <FormLabel htmlFor="lastName">Last name</FormLabel>
-                            <Input
-                              {...field}
-                              id="lastName"
-                              placeholder="Last name"
-                            />
-                            <FormErrorMessage>
-                              {form.errors.lastName}
-                            </FormErrorMessage>
-                          </FormControl>
-                        )}
-                      </Field>
-                    </HStack>
                     <Field name="skills">
                       {({ field, form }) => (
                         <FormControl
@@ -224,7 +183,7 @@ function DatabaseInterface() {
                       isLoading={values.isSubmitting}
                       type="submit"
                     >
-                      Submit
+                      Find
                     </Button>
                   </Form>
                 )}
