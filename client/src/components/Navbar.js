@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Box, Button, Center, Flex, Heading, Link } from '@chakra-ui/react';
 import { ThemeContext } from '../contexts/ThemeContext';
 
-import { FaMoon, FaSun, FaGithub } from 'react-icons/fa';
+import { FaMoon, FaSun, FaGithub, FaGithubAlt } from 'react-icons/fa';
 
 function Navbar() {
   const { lightMode, setLightMode } = useContext(ThemeContext);
@@ -55,20 +55,36 @@ function Navbar() {
             justify="space-between"
             w={{ base: '95%', md: '80%' }}
           >
-            <Button
-              border="0"
-              as={Link}
-              href="https://github.com/Sporego/hello-ryan"
-              rightIcon={<FaGithub />}
-              variant="outline"
-              _hover={
-                lightMode === 'light'
-                  ? { background: 'gray.200' }
-                  : { background: 'gray.600' }
-              }
-            >
-              Github Repo
-            </Button>
+            <div>
+              <Button
+                border="0"
+                as={Link}
+                href="https://github.com/Sporego/hello-ryan"
+                rightIcon={<FaGithub />}
+                variant="outline"
+                _hover={
+                  lightMode === 'light'
+                    ? { background: 'gray.200' }
+                    : { background: 'gray.600' }
+                }
+              >
+                Github Repo
+              </Button>
+              <Button
+                border="0"
+                as={Link}
+                href="https://github.com/Sporego/"
+                rightIcon={<FaGithubAlt />}
+                variant="outline"
+                _hover={
+                  lightMode === 'light'
+                    ? { background: 'gray.200' }
+                    : { background: 'gray.600' }
+                }
+              >
+                Github Profile
+              </Button>
+            </div>
           </Flex>
         </Center>
       </Box>
