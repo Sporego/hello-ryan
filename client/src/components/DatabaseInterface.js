@@ -149,8 +149,8 @@ function DatabaseInterface() {
                   alert("payload : "+JSON.stringify(values, null, 2));
                   try {
                     const response = await axios.get('api/applicants', values);
-                    alert(response);
-                    alert(response.body);
+                    alert("Success: Check Console")
+                    console.log(response)
                     actions.setSubmitting(false);
                   } catch (error) {
                     actions.setSubmitting(false);
