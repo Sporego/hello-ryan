@@ -20,10 +20,26 @@ export const postApplicant = async (req,res) => {
 }
 
 export const getApplicants = async (req,res) => {
-    const { query } = req.query;
+    const {skills} = req.body;
 
     try {
-        const applicants = await Applicant.find();
+        const applicants = await Applicant.aggregate(
+            [{
+                $addFields: {
+                    "count": {
+                        $size: {
+                            $setIntersection: ["$skills", skills]
+                        }
+                    }
+                }
+            }, {
+                $sort: {
+                    "count": -1
+                }
+            }, {
+                $limit: 5
+            }]
+        );
 
         res.status(200).json(applicants)
     } catch (e) {
