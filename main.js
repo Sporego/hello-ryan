@@ -2,11 +2,15 @@ import express from "express";
 import path from "path";
 import mongoose from "mongoose";
 
+import applicantRoutes from './routes/applicants.js'
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/api', applicantRoutes)
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
