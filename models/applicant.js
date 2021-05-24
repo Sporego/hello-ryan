@@ -9,7 +9,7 @@ const applicantSchema = new Schema({
       type: String,
       validate: {
         validator: function (v) {
-          return !(this.skills.length < 16);
+          return (this.skills.length < 16);
         },
         message: (props) =>
           `${props.value} exceeds maximum skills amount of 16`,
