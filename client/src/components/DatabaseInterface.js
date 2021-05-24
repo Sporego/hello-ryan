@@ -61,7 +61,7 @@ function DatabaseInterface() {
                     alert(JSON.stringify(values, null, 2));
                     try {
                       const response = await axios.post('api/applicants', values)
-                      alert('Success! Applicant ID: '+response._id)
+                      alert('Success! Applicant ID: '+response.id)
                       actions.setSubmitting(false);
                     } catch (error) {
                       actions.setSubmitting(false);
