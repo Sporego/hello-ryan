@@ -57,7 +57,7 @@ function DatabaseInterface() {
                 initialValues={{}}
                 onSubmit={async (values, actions) => {
                   values.skills = values.skills.split(',');
-                  alert(JSON.stringify(values, null, 2));
+                  alert("payload : "+JSON.stringify(values, null, 2));
                   try {
                     const response = await axios.post('api/applicants', values);
                     alert('Success! Applicant ID: ' + response);
