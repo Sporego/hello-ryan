@@ -12,13 +12,15 @@ import {
   Input,
   VStack,
 } from '@chakra-ui/react';
-import { ThemeContext } from '../contexts/ThemeContext';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
-
 import axios from 'axios';
+
+import { ThemeContext } from '../contexts/ThemeContext';
+import { ApplicantsContext} from '../contexts/ApplicantsContext'
 
 function DatabaseInterface() {
   const { lightMode, setLightMode } = useContext(ThemeContext);
+  const {applicantsArray, setApplicantsArray} = useContext(ThemeContext);
 
   function validateFirstName(value) {
     let error;
@@ -151,6 +153,7 @@ function DatabaseInterface() {
                     const response = await axios.get('api/applicants', values);
                     alert("Success: Check Console")
                     console.log(response)
+                    setApplicantsArray(response)
                     actions.setSubmitting(false);
                   } catch (error) {
                     actions.setSubmitting(false);
@@ -188,6 +191,7 @@ function DatabaseInterface() {
                   </Form>
                 )}
               </Formik>
+
             </VStack>
           </Flex>
         </Center>
